@@ -1,0 +1,32 @@
+{
+    "name": "folio-app",
+    "version": "0.0.1",
+    "author": "Simon BERNARD",
+    "description": "Simon BERNARD Front end developer #appDescription# Project manager",
+    "keywords": [],
+    "repository": "",
+    "homepage": "http://simon-bernard.fr",
+    "main": "index.html",
+    "dependencies": {},
+    "devDependencies": {
+        "bower": "~1.3.12",
+        "grunt": "~0.4.1",
+        "load-grunt-tasks": "~3.1.0",
+        "grunt-contrib-less": "~0.8.3",
+        "grunt-contrib-requirejs": "~0.4.1",
+        "grunt-modernizr": "~0.4.1",
+        "grunt-bower-install": "~0.7.0",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-open": "~0.2.3",
+        "grunt-express": "~1.2.1",
+        "time-grunt": "~0.2.5",
+        "grunt-contrib-concat": "~0.5.1",
+        "grunt-contrib-jshint": "~0.11.1",
+        "grunt-contrib-cssmin": "~0.12.2",
+        "grunt-spritesmith": "~4.5.2",
+        "grunt-contrib-clean": "~0.5.0",
+        "grunt-contrib-copy": "~0.4.1",
+        "grunt-contrib-imagemin": "~0.9.4",
+        "grunt-concurrent": "~0.4.2"
+    }
+}
