@@ -63,14 +63,48 @@
 */
 
 
+.fontFace( "Futura Medium" 	, "res/font/FuturaStd-Medium" );
 .fontFace( "Futura Bold" 	, "res/font/FuturaStd-Bold" );
+
+.fontFace( "Proxima Thin" 	 , "res/font/Proxima Nova Thin" );
+.fontFace( "Proxima Light" 	 , "res/font/Proxima Nova Light" );
+.fontFace( "Proxima Regular" , "res/font/Proxima Nova Regular" );
+.fontFace( "Proxima Bold" 	 , "res/font/Proxima Nova Bold" );
+
+
 
 
 .futura( @size , @weight : 300 , @color : inherit ) {
-    font-family:'Futura Bold';
+    font-family:'Futura Medium';
     font-weight:@weight;
     .font-size(@size);
     color:@color;
+}
+
+.futura( @size , @weight : 300 , @color : inherit ) when ( @weight = 500 ) {
+    font-family:'Futura Bold';
+}
+
+
+
+
+.proxima( @size , @weight : 300 , @color : inherit ) {
+    font-family:'Proxima Light';
+    font-weight:@weight;
+    .font-size(@size);
+    color:@color;
+}
+
+.proxima( @size , @weight : 300 , @color : inherit ) when ( @weight = 100 ) {
+    font-family:'Proxima Thin';
+}
+
+.proxima( @size , @weight : 300 , @color : inherit ) when ( @weight = 400 ) {
+    font-family:'Proxima Regular';
+}
+
+.proxima( @size , @weight : 300 , @color : inherit ) when ( @weight = 500 ) {
+    font-family:'Proxima Bold';
 }
 
 
