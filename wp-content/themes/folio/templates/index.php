@@ -10,6 +10,19 @@
 	    ->fetch();
 	?>
 
+
+	<header id="header">
+
+		<h2 class="header-title">Simon BERNARD</h2>
+		<h1 class="header-subTitle">Développeur Front End</h1>
+		<ul class="header-social">
+			<li class="sprite icon-icon-github"></li>
+			<li class="icon-twitter"></li>
+			<li class="icon-linkedin"></li>
+		</ul>
+
+	</header>
+
 	<section id="projects">
 
 		<?php foreach ($projects->all() as $aProject) { ?>
