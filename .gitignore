@@ -7,7 +7,7 @@
 ./wp-content/themes/*/tmp
 blog
 readme.html
-wp-content/themes/*/main.css
+wp-content/themes/*/style.css
 wp-content/themes/*/main.js
 wp-content/themes/*/main.js.map
 wp-content/themes/*/dist
