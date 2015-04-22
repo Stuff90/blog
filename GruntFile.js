@@ -221,6 +221,7 @@ module.exports = function (grunt) {
         sprite: {
             dev : {
                 src: ['<%= config.src %>res/public/sprite/*.png'],
+                imgPath: 'res/public/sprite.generated.png',
                 dest: '<%= config.src %>res/public/sprite.generated.png',
                 destCss: '<%= config.src %>less/conf/sprite.generated.less',
                 algorithm: 'binary-tree',
@@ -229,6 +230,7 @@ module.exports = function (grunt) {
             dist : {
                 src: ['<%= config.src %>res/public/sprite/*.png'],
                 dest: '<%= config.src %>res/public/sprite.generated.png',
+                imgPath: 'res/public/sprite.generated.png',
                 destCss: '<%= config.src %>less/conf/sprite.generated.less',
                 algorithm: 'binary-tree',
             }
