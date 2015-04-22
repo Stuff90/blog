@@ -1,0 +1,33 @@
+.article {
+
+	.size(100%, 250px);
+	.margin(8px 0);
+	position: relative;
+	background:@white;
+
+	.article--imageFig {
+		.size(400px, 250px);
+		float: left;
+	}
+
+	.article--image {}
+
+	.article--title , .article--excerpt {
+		.margin-left(400px);
+		.padding(10px 15px);
+	}
+
+	.article--title {
+		.padding-top(25px);
+		> a {
+			display: inline-block;
+			.proxima(27px, 200, @black);
+		}
+	}
+
+	.article--excerpt {
+		.proxima(16px, 200, @black);
+		.line-height(19px);
+	}
+
+}
