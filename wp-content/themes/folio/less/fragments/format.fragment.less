@@ -1,0 +1,15 @@
+.format {}
+
+.format-text:extend(.format) {}
+.format-media:extend(.format) {
+	&.image {
+		text-align: center;
+	}
+	&.video {}
+}
+.format-lineBreak:extend(.format) {
+	border-color:transparent;
+	& + .format-lineBreak {
+		display:none;
+	}
+}
