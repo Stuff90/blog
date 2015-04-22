@@ -36,17 +36,6 @@
 	@font-size-default:   62.5%;
 	@font-family-default : "Arial";
 
-	html {
-	    font-size   : @font-size-default;
-	    font-family : @font-family-default;
-	    .size();
-	}
-
-	* {
-		box-sizing: border-box;
-	}
-
-
 
 
 
@@ -89,3 +78,17 @@
  * ================================================================
 */
 
+
+
+	html {
+	    .size();
+	    font-size   : @font-size-default;
+	    font-family : @font-family-default;
+		color: @white;
+		background:url('res/public/texture-black.png');
+		background-attachment:fixed;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
