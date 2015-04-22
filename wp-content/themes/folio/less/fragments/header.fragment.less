@@ -1,22 +1,25 @@
 #header {
-	.size();
-	.padding-top(25%);
-	color: @white;
-	background:url('res/public/texture-black.png');
+	.top(0);
+	.size(100%, 50px);
+	z-index:9;
+	color:@black;
+	position:fixed;
+	background:@white;
 
-	.header-title, .header-subTitle {
-		text-align:center;
-	}
 
-	.header-title {
-		.proxima(42px , 100  , @white);
-	}
-	.header-subTitle {
-		.proxima(30px , 300  , @white);
-	}
-	.header-social > li {
-		.size(50px,50px);
-		.sprites(@icon-twitter);
+	.menu-main-container {
+		.width(50%);
+		.margin-left(400px);
+		position: relative;
+		> .menu {
+			> .menu-item {
+				.margin-right(20px);
+				.line-height(48px);
+				.proxima(20px , 300 , @black);
+				vertical-align: top;
+				display: inline-block;
+			}
+		}
 	}
 
 }
