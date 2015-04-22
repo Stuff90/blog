@@ -1,0 +1,53 @@
+.share {
+	.share--item {
+		.margin(0, 4px);
+		.size(40px,40px);
+		border-radius:50%;
+		vertical-align:top;
+		display: inline-block;
+	}
+
+	.share--link {
+		.size();
+		border-radius:50%;
+		overflow:hidden;
+		position: relative;
+		display: inline-block;
+		border:solid 1px @gray;
+
+		&:after , &:before {
+			.transition(all 300ms linear);
+			.top(7px);
+			.left(7px);
+			content:'';
+			position: absolute;
+		}
+
+		&:before {
+			.margin-left(-40px);
+		}
+
+		&:hover {
+			border:solid 1px @gray - 60%;
+
+			&:before {
+				.margin-left(0px);
+			}
+
+			&:after {
+				.margin-left(40px);
+			}
+		}
+	}
+
+	.share--facebook:after:extend(.icon.facebook-gray) , .share--twitter:after:extend(.icon.twitter-gray) {}
+	.share--facebook:before:extend(.icon.facebook-black) , .share--twitter:before:extend(.icon.twitter-black) {}
+}
+
+
+
+.share-articleFeed:extend(.share all) {
+	position: absolute;
+	.right(10px);
+	.bottom(10px);
+}
