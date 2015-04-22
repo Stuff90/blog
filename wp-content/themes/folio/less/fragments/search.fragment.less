@@ -1,0 +1,40 @@
+.search {
+	.top(5px);
+	.right(0);
+	position: absolute;
+
+	.search--buttonWrapper {
+		.size(42px, 40px);
+	}
+
+	.search--button {
+		.size();
+		position: relative;
+		display:inline-block;
+
+		&:hover {
+			background:@gray;
+
+			&:after {
+				opacity:0;
+			}
+		}
+
+		&:after, &:before {
+			.top(4px);
+			.right(4px);
+			.size(32px,32px);
+			content:'';
+			position: absolute;
+		}
+	}
+
+	.search--button:after:extend(.icon.search-gray) {}
+	.search--button:before:extend(.icon.search-white) {}
+
+	.search--form {
+		display:none;
+	}
+
+	.search--input {}
+}
