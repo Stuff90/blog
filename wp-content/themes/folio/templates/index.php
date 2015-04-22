@@ -1,29 +1,31 @@
 <?php get_header(); ?>
 
-	<?php
 
-	$projects = new ContentManager();
-	$projects
-	    ->setContentType('project')
-	    ->setOrder('DESC')
-	    ->setPostPerPage(6)
-	    ->fetch();
-	?>
+	<!-- <h2 class="header-title">Simon BERNARD</h2> -->
+	<!-- <h1 class="header-subTitle">Développeur Front End</h1> -->
 
+	<section id="home" class="page wrapper">
 
-	<header id="header">
+<!-- 
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<ul class="sharingBox">
+		<li><a href="#" class="icon github-white"></a></li>
+		<li><a href="#" class="icon github-gray"></a></li>
+		<li><a href="#" class="icon github-black"></a></li>
+		<li><a href="#" class="icon twitter-white"></a></li>
+		<li><a href="#" class="icon linkedin-white"></a></li>
+		<li><a href="#" class="icon facebook-white"></a></li>
+		<li><a href="#" class="icon pinterest-white"></a></li>
+	</ul> -->
+		<?php require_once( __DIR__ . '/fragments/feed.php'); ?>
 
-		<h2 class="header-title">Simon BERNARD</h2>
-		<h1 class="header-subTitle">Développeur Front End</h1>
-		<ul class="header-social">
-			<li class="sprite icon-icon-github"></li>
-			<li class="icon-twitter"></li>
-			<li class="icon-linkedin"></li>
-		</ul>
+	</section>
 
-	</header>
-
-	<section id="projects">
+	<!-- <section id="projects">
 
 		<?php foreach ($projects->all() as $aProject) { ?>
 
@@ -33,6 +35,6 @@
 
 		<?php } ?>
 
-	</section>
+	</section> -->
 
 <?php get_footer();	?>
