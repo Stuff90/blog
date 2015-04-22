@@ -28,6 +28,21 @@ class Content
         }
         return $this->data->$name;
     }
+
+    public function getImage( $name , $size = "thumbnail" , $icon = false )
+    {
+        if (!isset($this->data->$name)) {
+            return $this->compositeData[$name];
+        }
+
+        return wp_get_attachment_image_src( $this->data->$name , $size, $icon );
+    }
+
+    public function getImageUrl( $name , $size = "thumbnail" , $icon = false )
+    {
+        $theImageArray = $this->getImage( $name , $size , $icon );
+        return $theImageArray[0];
+    }
 }
 
 
@@ -113,74 +128,7 @@ class ContentManager
             // #############          IMAGES          ############# //
             // #################################################### //
 
-            $imagesBySize = array();
 
-            // ############# Project ############# //
-            if($aContent->post_type == 'project')
-            {
-//                $images = get_custom_field('brand_logo');
-//                var_dump($images);
-//                die();
-//                $imagesBySize = $this->formatImage($images);
-            }
-
-            // ############# Brand ############# //
-            if($aContent->post_type == 'brand')
-            {
-                $images = get_custom_field('brand_logo');
-                $imagesBySize = $this->formatImage($images);
-            }
-
-            // ############# Text article ############# //
-            if($aContent->post_type == 'text' OR $aContent->post_type == 'book')
-            {
-                $images = get_custom_field('article_text_image:to_array');
-
-                foreach ($images as $anImage) {
-                    $imagesBySize[] = $this->formatImage($anImage);
-                }
-            }
-
-            // ############# Caption article ############# //
-            if($aContent->post_type == 'caption')
-            {
-                $aContent->captions  = array();
-                $captions = get_custom_field('article_caption_list_caption:to_array');
-
-                foreach ($captions as $aCaption)
-                {
-                    $theImage = get_post($aCaption);
-
-                    $contentCaptions[]      = $theImage->post_content;
-                    $imagesBySize[]         = $this->formatImage($theImage->caption_image);
-
-                }
-            }
-
-            // ############# Video article ############# //
-            if($aContent->post_type == 'video')
-            {
-                $imagesBySize[]         = $this->formatImage($aContent->video_cover_image);
-
-                parse_str( parse_url( $aContent->youtube_video_url, PHP_URL_QUERY ), $urlParameters );
-
-                $aContent->youtube  = array(
-                    'url' => $aContent->youtube_video_url,
-                    'youtubeId' => $urlParameters['v']
-                );
-            }
-
-            // ############# Envelope ############# //
-            if($aContent->post_type == 'envelope')
-            {
-                $contentCaptions[] = $aContent->post_content;
-                $imagesBySize[]    = $this->formatImage($aContent->envelope_image);
-            }
-
-            // ###################################################### //
-
-            $aContent->captions = $contentCaptions;
-            $aContent->images   = $imagesBySize;
             $aContent->nb       = $counter;
 
             $this->contents[]   = $aContent;
