@@ -31,10 +31,7 @@
 			<section class="article--disqus">
 				<div id="disqus_thread"></div>
 				<script type="text/javascript">
-				    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-				    var disqus_shortname = 'simonb90'; // Required - Replace example with your forum shortname
-
-				    /* * * DON'T EDIT BELOW THIS LINE * * */
+				    var disqus_shortname = 'simonb90';
 				    (function() {
 				        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 				        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
