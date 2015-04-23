@@ -35,12 +35,25 @@ class Content
             return $this->compositeData[$name];
         }
 
+        $attachementID = json_decode($this->data->$name);
+
+        if(gettype($attachementID) == 'array'){
+            $results = array();
+
+            foreach ($attachementID as $theAttachementID) {
+                $results[] = wp_get_attachment_image_src( $theAttachementID , $size, $icon );
+            }
+            return $results;
+        }
         return wp_get_attachment_image_src( $this->data->$name , $size, $icon );
     }
 
     public function getImageUrl( $name , $size = "thumbnail" , $icon = false )
     {
         $theImageArray = $this->getImage( $name , $size , $icon );
+        if(gettype($attachementID) == 'array'){
+            return $theImageArray[0];
+        }
         return $theImageArray[0];
     }
 }
