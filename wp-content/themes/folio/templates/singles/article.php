@@ -36,24 +36,25 @@
 					--><?php echo apply_filters('share_icons' , $shareOptions , 'linkedin' , 'share--link share--linkedin'); ?><!--
 					--><?php echo apply_filters('share_icons' , $shareOptions , 'googleplus' , 'share--link share--googleplus'); ?>
 				</ul>
-
 				<hr class="bar">
 
-				<h5 class="article--sidebarTitle">Voir aussi :</h5>
+				<h5 class="article--sidebarTitle">Articles populaires</h5>
 
 				<?php
 
 					$related = new ContentManager();
 					$related
+					    ->setQueryParameters('meta_key', 'viewCounter')
+					    ->setQueryParameters('orderby', 'meta_value_num')
 					    ->setContentType('article')
-					    ->setOrder('DESC')
-					    ->setPostPerPage(4)
+					    ->setPostPerPage(5)
+					    ->setOrder('ASC')
 					    ->fetch();
 					?>
 
 					<ul class="article--sidebarRelated">
 						<?php foreach ($related->all() as $relatedArticle) { ?>
-							<li><a href="<?php echo get_permalink($relatedArticle->ID); ?>"><?php echo $relatedArticle->post_title; ?></a></li>
+							<li><a class="article--sidebarRelated--link" href="<?php echo get_permalink($relatedArticle->ID); ?>"><?php echo $relatedArticle->post_title; ?></a></li>
 					   	<?php } ?>
 					</ul>
 
