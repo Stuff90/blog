@@ -2,8 +2,9 @@
 
 	.padding-top(60px);
 
-	.article--excerpt, .article--content {
+	.article--excerpt, .article--content, .article--sidebar {
 		.margin(10px , 0);
+		.proxima(18px , 300 , @black );
 		background:@white;
 	}
 
@@ -23,7 +24,22 @@
 	.article--content {
 		.padding(25px);
 		.line-height(20px);
-		.proxima(18px , 300 , @black );
+	}
+
+	.article--sidebar {
+		.margin(0);
+		.padding(25px);
+		.padding-top(30px);
+	}
+
+
+	.article--sidebarTitle {
+		.margin-top(30px);
+		.margin-bottom(10px);
+		.proxima(20px , 200 , @black );
+	}
+
+	.article--sidebarRelated {
 	}
 
 }
