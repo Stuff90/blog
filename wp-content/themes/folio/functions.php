@@ -17,3 +17,5 @@
 
 
     add_action( 'init', 'registerMainMenu' );
+
+    add_theme_support( 'post-thumbnails' );
