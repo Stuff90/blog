@@ -65,4 +65,17 @@
 </section>
 
 
+<?php
+
+	$viewCount = get_post_custom_values('viewCounter' , $article->ID);
+
+	if(sizeof($viewCount) > 0){
+		$newCount = $viewCount[0] + 1;
+		update_post_meta($article->ID, 'viewCounter' , $newCount);
+	} else {
+		add_post_meta($article->ID, 'viewCounter' , 1, true);
+	}
+?>
+
+
 <?php get_footer();	?>
