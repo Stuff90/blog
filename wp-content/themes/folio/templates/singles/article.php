@@ -2,6 +2,12 @@
 
 <?php
 	$article = new Content($post);
+
+	$shareOptions = array(
+		'post'			=> $article,
+		'liClass'		=> 'share--item',
+		'twitterUser'	=> '@simonbernard90'
+	);
 ?>
 
 
@@ -24,8 +30,10 @@
 		<aside class="wrapper-sidebar">
 			<div class="article--sidebar">
 				<ul class="share-articleDetail">
-					<li class="share--item"><a href="#" class="share--link share--facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('<?php echo get_permalink($article->ID, FALSE); ?>'), 'Share on Facebook','width=626,height=436');return false;"></a></li><!--
-					--><li class="share--item"><a href="#" class="share--link share--twitter" onclick="window.open('https://www.twitter.com/share?text='+encodeURIComponent('@CrFashionBook')+'&url='+encodeURIComponent('<?php echo get_permalink($article->ID, FALSE); ?>'), 'Share on Twitter', 'width=626,height=436');return false;"></a></li>
+					<?php echo apply_filters('share_icons' , $shareOptions , 'twitter' , 'share--link share--twitter'); ?><!--
+					--><?php echo apply_filters('share_icons' , $shareOptions , 'facebook' , 'share--link share--facebook'); ?><!--
+					--><?php echo apply_filters('share_icons' , $shareOptions , 'linkedin' , 'share--link share--linkedin'); ?><!--
+					--><?php echo apply_filters('share_icons' , $shareOptions , 'googleplus' , 'share--link share--googleplus'); ?>
 				</ul>
 
 				<hr class="bar">
