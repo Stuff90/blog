@@ -5,6 +5,7 @@
 
     require_once 'setup/filters.php';
     add_filter( 'clean_content', 'clean_content_fn', 20 );
+	add_filter( 'share_icons', 'share_icons_fn', 20 , 3 );
 
 
     function registerMainMenu() {
