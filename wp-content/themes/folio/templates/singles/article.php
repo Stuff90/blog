@@ -13,9 +13,10 @@
 
 <section id="article" class="page">
 
-	<aside class="article--cover wrapper">
+	<section class="article--cover wrapper">
 		<figure><img src="<?php echo $article->getImageUrl('articlecover', 'Article Cover'); ?>" alt=""></figure>
-	</aside>
+		<h1 class="article--title"><?php echo $article->post_title; ?></h1>
+	</section>
 
 	<div class="wrapper">
 
