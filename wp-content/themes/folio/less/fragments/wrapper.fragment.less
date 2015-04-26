@@ -17,3 +17,26 @@
 	.margin-left(610px);
 	.padding-top(10px);
 }
+
+
+@media @tablet {
+	.wrapper {
+		.width(100%);
+	}
+
+
+	.wrapper-content:extend(.wrapper) {
+		float:none;
+		.width(100%);
+	}
+
+
+
+	.wrapper-sidebar:extend(.wrapper) {
+		.width(100%);
+		.max-width(600px);
+		.margin-left(0);
+		.padding-top(0);
+		margin:auto;
+	}
+}
