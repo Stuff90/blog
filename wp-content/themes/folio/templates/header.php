@@ -6,6 +6,8 @@
 
 	<header id="header">
 		<div class="wrapper">
+			<h1 class="header--title">Simon BERNARD</h1>
+
 			 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 
 			<aside class="search">
