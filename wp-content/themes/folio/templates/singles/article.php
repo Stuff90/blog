@@ -18,7 +18,7 @@
 		<h1 class="article--title"><?php echo $article->post_title; ?></h1>
 	</section>
 
-	<div class="wrapper">
+	<div class="wrapper clearfix">
 
 		<article class="wrapper-content">
 			<section class="article--excerpt">
@@ -26,22 +26,11 @@
 				<p class="article--datePlublished"><time>Publié le <?php echo get_the_date( 'd/m/Y' , $article->ID); ?></time></p>
 			</section>
 
-			<section class="article--content"><?php echo apply_filters('clean_content' , $article->post_content); ?></section>
-
-			<section class="article--disqus">
-				<div id="disqus_thread"></div>
-				<script type="text/javascript">
-				    var disqus_shortname = 'simonb90';
-				    (function() {
-				        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-				        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				    })();
-				</script>
-				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-				<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+			<section class="article--content">
+				<?php echo apply_filters('clean_content' , $article->post_content); ?>
 			</section>
 		</article>
+
 
 		<aside class="wrapper-sidebar">
 			<div class="article--sidebar">
@@ -78,6 +67,21 @@
 
 	</div>
 
+	<div class="wrapper">
+		<section class="article--disqus">
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    var disqus_shortname = 'simonb90';
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+		</section>
+	</div>
 
 </section>
 
